@@ -8,20 +8,21 @@
         color: inherit;
         padding: 1.5rem 2rem;
         border-radius: 2px;
-        background-color: rgba($color-white, .5);
+        background-color: rbga($color-white, .5);
         border: none;
         border-bottom: 3px solid transparent;
         width: 90%;
         display: block;
         transition: all .3s;
+        @include respond(tab-port) {
+            width: 100%;
+        }
         &:focus {
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-black, .1);
             border-bottom: 3px solid $color-primary;
         }
         &:focus:invalid {
-            outline: none;
-            box-shadow: 0 1rem 2rem rgba($color-black, .1);
             border-bottom: 3px solid $color-secondary-dark;
         }
         &::-webkit-input-placeholder {
@@ -44,6 +45,10 @@
     &__radio-group {
         width: 49%;
         display: inline-block;
+        @include respond(tab-port) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
     }
     &__radio-input {
         display: none;
@@ -62,12 +67,12 @@
         display: inline-block;
         position: absolute;
         left: 0;
-        top: -.5rem;
+        top: -.4rem;
         &::after {
             content: "";
+            display: block;
             height: 1.3rem;
             width: 1.3rem;
-            display: block;
             border-radius: 50%;
             position: absolute;
             top: 50%;
